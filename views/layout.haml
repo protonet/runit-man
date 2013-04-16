@@ -2,21 +2,21 @@
 %html
   %head
     %title= h(t('runit.title', :p1 => @title, :p2 => t('runit.label')))
-    %link{:href=>"/protonet/status/css/bootstrap.min.css", :type=>"text/css", :rel=>"stylesheet"}/
-    %link{:href=>"/protonet/status/css/runit-man.css", :type=>"text/css", :rel=>"stylesheet"}/
+    %link{:href=>"css/bootstrap.min.css", :type=>"text/css", :rel=>"stylesheet"}/
+    %link{:href=>"css/runit-man.css", :type=>"text/css", :rel=>"stylesheet"}/
   %body
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
-          %a.brand{:href=>"/protonet/status/"}= h(t('runit.header', :p1 => host_name, :p2 => t('runit.label')))
+          %a.brand{:href=>"/"}= h(t('runit.header', :p1 => host_name, :p2 => t('runit.label')))
           %ul.nav
             %li
-              %a{:href=>'/protonet/status/info'}= h(t('runit.info.title'))
+              %a{:href=>'/info'}= h(t('runit.info.title'))
     .container-fluid
       .row-fluid
         .span12= yield_content :content
       .row-fluid
         .span12= yield_content :footer
     - @scripts.each do |name|
-      %script{:type=>"text/javascript", :src=>"/protonet/status/js/#{h(name)}.js"}
+      %script{:type=>"text/javascript", :src=>"js/#{h(name)}.js"}
 
