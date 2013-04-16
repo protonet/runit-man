@@ -21,8 +21,8 @@
         - unless service_info.down?
           - service_info.allowed_signals.each do |signal|
             = service_signal service_info.name, signal, t("runit.services.table.signals.#{signal}")
-        - if service_info.switchable?
-          = service_action service_info.name, :switch_down, t('runit.services.table.actions.switch_down')
+        -#- if service_info.switchable?
+        -#  = service_action service_info.name, :switch_down, t('runit.services.table.actions.switch_down')
       - else
         - if service_info.switchable?
           = service_action service_info.name, :switch_up, t('runit.services.table.actions.switch_up')
