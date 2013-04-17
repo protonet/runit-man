@@ -46,7 +46,7 @@ class RunitMan::App < Sinatra::Base
       @read_write_mode == :readonly
     end
     def url_for(path)
-      "#{settings.subdomain}#{path}"
+      "#{settings.subdirectory}#{path}"
     end
     def sendfile?
       !!File.instance_methods.detect { |m| "#{m}" == 'trysendfile' }
