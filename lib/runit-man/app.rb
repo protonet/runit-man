@@ -31,13 +31,13 @@ class RunitMan::App < Sinatra::Base
   DEFAULT_ALL_SERVICES_DIR    = '/etc/sv'.freeze
   DEFAULT_ACTIVE_SERVICES_DIR = '/etc/service'.freeze
 
+  set :subdirectory,  "/protonet/status"
   set :environment,   :production
   set :root,          GEM_FOLDER
 
   enable :logging, :dump_errors, :static
   disable :raise_errors
 
-  helpers Sinatra::UrlForHelper
 
   helpers do
     include Helpers
@@ -45,7 +45,9 @@ class RunitMan::App < Sinatra::Base
     def readonly?
       @read_write_mode == :readonly
     end
-
+    def url_for(path)
+      "#{settings.subdomain}#{path}"
+    end
     def sendfile?
       !!File.instance_methods.detect { |m| "#{m}" == 'trysendfile' }
     end
