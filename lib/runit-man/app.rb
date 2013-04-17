@@ -1,13 +1,14 @@
 # encoding: utf-8
 
+require 'sinatra/base'
+require 'sinatra/url_for'
+
 require 'file/tail'
 require 'fileutils'
 require 'haml'
 require 'i18n'
 require 'runit-man/helpers'
 require 'runit-man/version'
-require 'sinatra/base'
-require 'sinatra/url_for'
 require 'yajl'
 
 if RUBY_VERSION >= '1.9'
