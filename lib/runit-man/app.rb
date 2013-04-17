@@ -31,7 +31,7 @@ class RunitMan::App < Sinatra::Base
   DEFAULT_ALL_SERVICES_DIR    = '/etc/sv'.freeze
   DEFAULT_ACTIVE_SERVICES_DIR = '/etc/service'.freeze
 
-  set :subdirectory,  "/protonet/status"
+  set :subdirectory,  ""
   set :environment,   :production
   set :root,          GEM_FOLDER
 
