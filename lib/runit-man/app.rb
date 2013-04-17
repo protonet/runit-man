@@ -1,13 +1,14 @@
 # encoding: utf-8
 
+require 'file/tail'
 require 'fileutils'
-require 'yajl'
 require 'haml'
 require 'i18n'
-require 'sinatra/base'
-require 'file/tail'
 require 'runit-man/helpers'
 require 'runit-man/version'
+require 'sinatra/base'
+require 'sinatra/url_for'
+require 'yajl'
 
 if RUBY_VERSION >= '1.9'
   Encoding.default_external = "utf-8"
@@ -34,6 +35,8 @@ class RunitMan::App < Sinatra::Base
 
   enable :logging, :dump_errors, :static
   disable :raise_errors
+
+  helpers Sinatra::UrlForHelper
 
   helpers do
     include Helpers

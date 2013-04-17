@@ -24,6 +24,7 @@ spec = Gem::Specification.new do |s|
   s.add_dependency 'yajl-ruby', '~> 1.0'
   s.add_dependency 'haml', '~> 3.0'
   s.add_dependency 'sinatra', '~> 1.3'
+  s.add_dependency 'emk-sinatra-url-for'
   s.add_dependency 'sinatra-content-for2', '~> 0.2.4'
   s.add_dependency 'i18n', '~> 0.5'
   s.add_dependency 'file-tail', '~> 1.0.7'
