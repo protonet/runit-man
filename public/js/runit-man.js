@@ -3,6 +3,7 @@
 {
     "use strict";
     var REFRESH_SERVICES_TIMEOUT = 5000;
+    var REFRESH_SERVICES_URL     = $('body').data('servicesUrl');
 
     $.ajaxSetup({
         error: function(e, req, options, error)
@@ -17,11 +18,11 @@
     {
         refreshServices.timer = null;
         $.ajax({
-            url: '/services',
+            url: REFRESH_SERVICES_URL,
             cache: false
         }).fail(function()
         {
-            $('#url').text('/services');
+            $('#url').text(REFRESH_SERVICES_URL);
             $('#error').show();
         }).done(function(html)
         {
